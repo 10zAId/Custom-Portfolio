@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="content-fit">
+            <div class="logo">Z</div>
+            <nav>
+                <ul class="list">
+                    <li><a href="#About">About Me</a></li>
+                    <li><a href="#Skills">Skills</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="section" id="banner">
+        <div class="content-fit">
+            <div class="title" data-before="TO MY PORTFOLIO">WELCOME</div>
+        </div>
+        <img src="img/flower.png" class="decorate" alt="" style="width: 40vw; bottom: 0; right: 0;">
+        <img src="img/leaf.png" class="decorate" alt="" style="width: 30vw; bottom: 0; left: 0;">
+    </div>
+
+    <!-- About section -->
+    <div class="section" id="About">
+        <div class="content-fit">
+            <div class="number"><img src="img/face.jpg" alt="face"></div>
+            <div class="des">
+                <div class="title">ABOUT ME</div>
+                <p>I’m a passionate and driven Computer Science student with a growing foundation in full-stack web
+                    development and programming. I have hands-on experience with HTML, CSS, JavaScript, Tailwind CSS,
+                    React, and I’m currently advancing my skills in Python to explore AI and Data Science applications.
+                    At the same time, I’m sharpening my JavaScript expertise while pursuing mastery of the MERN stack.
+                    My journey is fueled by curiosity, continuous learning, and the drive to build impactful and
+                    innovative solutions.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills section -->
+    <div class="section" id="Skills">
+        <div class="content-fit">
+            <div class="des">
+                <div class="title">SKILLS</div>
+                <div class="skill">
+                    <ul>
+                        <li class="entry">
+                            <img src="img/html.png" alt="html">HTML
+                        </li>
+                        <li class="entry">
+                            <img src="img/css.png" alt="html">CSS
+                        </li>
+                        <li class="entry">
+                            <img src="img/javascript.png" alt="html">JavaScript
+                        </li>
+                        <li class="entry">
+                            <img src="img/tailwind-css.png" alt="html">Tailwind CSS
+                        </li>
+                        <li class="entry">
+                            <img src="img/python.png" alt="html">Python
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <img src="img/leaf1.png" class="decorate" alt="" style="width: 63vw; bottom: 0; right: 0; z-index: 101;">
+    </div>
+    <!-- Contact section -->
+    <div class="section" id="Contact">
+        <div class="content-fit">
+            <div class="des">
+                <div class="title">CONTACT</div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2><span>Let’s</span> work together!</h2>
+                    <p>I solve problems with simple solutions. I would love to help you out!</p>
+                    <form>
+                        <div class="form-row">
+                            <input type="text" placeholder="First name" required>
+                            <input type="text" placeholder="Last name" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="email" placeholder="Email address" required>
+                            <input type="tel" placeholder="Phone number" required>
+                        </div>
+                        <select required>
+                            <option value="">Choose Service</option>
+                            <option value="web">Web Development</option>
+                            <option value="design">UI/UX Design</option>
+                            <option value="data">Data Science</option>
+                        </select>
+                        <textarea placeholder="Message" rows="5" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer class="Socials">
+            <div class="footer-content">
+                <div class="copyright">© 2025 Zaid Ahmed. All Rights Reserved.</div>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/zaid-ahmed-8159a5372/" target="_blank"
+                        rel="noopener noreferrer"><img src="img/linkedin.png" alt="linkedin"></a>
+                    <a href="https://www.github.com/10zAId" target="_blank" rel="noopener noreferrer"><img
+                            src="img/github.png" alt="github"></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+<div id="container3D"></div>
+<script type="module" src="app.js"></script>
+
+</html>

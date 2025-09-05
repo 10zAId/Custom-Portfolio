@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/devil-breeze');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/bimbo');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #e4e4e4;
+    font-size: 14px;
+    background-image:
+        url(img/bg.png),
+        repeating-linear-gradient(to right, transparent 0 500px, #4b728133 500px 501px);
+    background-size: 100%;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.list a {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.4em;
+    color: #e4e4e4;
+}
+
+.section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+.logo {
+    font-family: "Caprasimo";
+    font-size: 4em;
+}
+
+.content-fit {
+    width: min(1200px, 90vw);
+    margin: auto;
+    min-height: 100vh;
+    position: relative;
+    padding-block: 10em;
+}
+
+header {
+    padding-block: 1em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(20px);
+    z-index: 100;
+    background-color: #1B1B1B11;
+    background-image: repeating-linear-gradient(to right, transparent 0 500px, rgba(238, 238, 238, 0.067) 500px 501px);
+}
+
+header .content-fit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: unset !important;
+    padding-block: unset !important;
+}
+
+header .content-fit nav ul {
+    display: flex;
+    gap: 2em;
+}
+
+#banner .title {
+    background: linear-gradient(90deg, #1d7272, #41fcfc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-size: 8em;
+    font-family: "exo 2";
+    font-style: italic;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(65, 144, 170, 0.8);
+}
+
+#banner .title::before {
+    content: attr(data-before);
+    position: absolute;
+    inset: 0.75em 0 0 0;
+    z-index: -1;
+    color: #224950;
+}
+
+.section .decorate {
+    position: absolute;
+}
+
+#About .number img {
+    width: 1.6em;
+    border-radius: 1em;
+}
+
+.des p {
+    font-size: 1.2em;
+}
+
+#About .content-fit {
+    display: flex;
+    gap: 30%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section .number {
+    font-family: "devil breeze";
+    font-size: 15em;
+    font-weight: bold;
+}
+
+.section .content-fit .title {
+    font-family: "devil breeze";
+    font-size: 5em;
+    font-weight: bold;
+}
+
+#Skills .content-fit {
+    padding-right: 30%;
+}
+
+#Skills .title {
+    font-size: 7em;
+    font-weight: 500;
+}
+
+.entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+    position: relative;
+    text-align: center;
+}
+
+#Skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+#Skills li {
+    font-family: 'Antonio';
+    padding: 3vh;
+    width: 12em;
+    background-color: rgba(13, 13, 13, 0.9);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.4vw;
+}
+
+#Skills img {
+    width: 3em;
+    height: auto;
+    filter: invert();
+}
+
+/* CONTACT SECTION */
+#Contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+#Contact .contact-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#Contact .content-fit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    background-color: rgba(13, 13, 13, 0.9);
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(65, 207, 207, 0.2);
+}
+
+.contact-form h2 {
+    font-size: 2em;
+    color: #1d7272;
+    margin-bottom: 0.5em;
+}
+
+.contact-form h2 span {
+    color: #41fcfc;
+}
+
+.contact-form p {
+    margin-bottom: 1.5em;
+    color: #e4e4e4;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.form-row {
+    display: flex;
+    gap: 1em;
+}
+
+.form-row input {
+    flex: 1;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8em;
+    border-radius: 6px;
+    border: none;
+    background: #0f0f0f;
+    color: #e4e4e4;
+}
+
+.contact-form button {
+    padding: 0.8em;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #1d7272, #41fcfc);
+    color: #e4e4e4;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    opacity: 0.9;
+}
+
+#container3D {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+}
+
+/* FOOTER */
+.Socials {
+    background-color: rgba(13, 13, 13, 0.9);
+    padding: 1.5em 3em;
+    /* bigger padding */
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.footer-content .copyright {
+    font-size: 1.1em;
+    color: #e4e4e4;
+    text-align: center;
+    flex: 1;
+}
+
+.footer-content .social-icons {
+    position: absolute;
+    right: 2em;
+    display: flex;
+    gap: 1em;
+}
+
+.footer-content .social-icons img {
+    filter: invert(1);
+    width: 32px;
+    /* bigger icons */
+    height: 32px;
+    transition: transform 0.3s;
+}
+
+.footer-content .social-icons img:hover {
+    transform: scale(1.25);
+}
+
+main {
+    flex: 1;
+}
+
+/* Responsive */
+@media screen and (max-width: 1023px) {
+    #banner .title {
+        font-size: 5em;
+    }
+
+    #About .content-fit {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #banner .title {
+        font-size: 3em;
+    }
+
+    #About .content-fit {
+        flex-direction: column;
+    }
+
+    .section .number {
+        font-size: 5em;
+    }
+
+    .section .content-fit .title {
+        font-size: 2em;
+    }
+
+    #Skills .content-fit {
+        padding-right: 0;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    #container3D {
+        position: absolute;
+    }
+}
