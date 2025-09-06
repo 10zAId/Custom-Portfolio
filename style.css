@@ -32,6 +32,49 @@ body {
     box-sizing: border-box;
 }
 
+.para {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.para h2 {
+    font-size: 1.9rem;
+}
+
+/* Container that holds typed text */
+.typed-wrapper {
+    display: inline-block;
+    min-width: 21rem;
+    /* reserve space for longest phrase */
+    text-align: left;
+}
+
+/* Typed.js text */
+#typed-text {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #e4e4e4;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+}
+
+/* Cursor styling */
+.typed-cursor {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #e4e4e4;
+    line-height: 1.2;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
 .list a {
     text-decoration: none;
     cursor: pointer;
@@ -86,8 +129,8 @@ header .content-fit nav ul {
     gap: 2em;
 }
 
-#banner .title {
-    background: linear-gradient(90deg, #1d7272, #41fcfc);
+#Home .title {
+    background: linear-gradient(90deg, #0d2525, #00ffff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -98,15 +141,6 @@ header .content-fit nav ul {
     font-weight: bold;
     position: relative;
     text-align: center;
-    text-shadow: 0 0 8px rgba(65, 144, 170, 0.8);
-}
-
-#banner .title::before {
-    content: attr(data-before);
-    position: absolute;
-    inset: 0.75em 0 0 0;
-    z-index: -1;
-    color: #224950;
 }
 
 .section .decorate {
@@ -114,6 +148,7 @@ header .content-fit nav ul {
 }
 
 #About .number img {
+    left: 50;
     width: 1.6em;
     border-radius: 1em;
 }
@@ -327,7 +362,7 @@ main {
 
 /* Responsive */
 @media screen and (max-width: 1023px) {
-    #banner .title {
+    #Home .title {
         font-size: 5em;
     }
 
@@ -337,7 +372,7 @@ main {
 }
 
 @media screen and (max-width: 767px) {
-    #banner .title {
+    #Home .title {
         font-size: 3em;
     }
 

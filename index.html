@@ -14,6 +14,7 @@
             <div class="logo">Z</div>
             <nav>
                 <ul class="list">
+                    <li><a href="#Home">Home</a></li>
                     <li><a href="#About">About Me</a></li>
                     <li><a href="#Skills">Skills</a></li>
                     <li><a href="#Contact">Contact</a></li>
@@ -22,13 +23,20 @@
         </div>
     </header>
 
-    <div class="section" id="banner">
+    <div class="section" id="Home">
         <div class="content-fit">
-            <div class="title" data-before="TO MY PORTFOLIO">WELCOME</div>
+            <div class="title">HI, I'M ZAID!</div>
+            <div class="para">
+                <h2>I'm</h2>
+                <div class="typed-wrapper">
+                    <span id="typed-text" class="subtitle"></span>
+                </div>
+            </div>
         </div>
         <img src="img/flower.png" class="decorate" alt="" style="width: 40vw; bottom: 0; right: 0;">
-        <img src="img/leaf.png" class="decorate" alt="" style="width: 30vw; bottom: 0; left: 0;">
+        <img src="img/leaf.png" class="decorate" alt="" style="width: 30vw; bottom: 0; left: 0;visibility: hidden;">
     </div>
+
 
     <!-- About section -->
     <div class="section" id="About">
@@ -122,5 +130,23 @@
 
 <div id="container3D"></div>
 <script type="module" src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        new Typed("#typed-text", {
+            strings: [
+                "a Web Developer",
+                "a Python Enthusiast",
+                "an AI Enthusiast",
+                "a Problem Solver"
+            ],
+            typeSpeed: 60,
+            backSpeed: 40,
+            backDelay: 1500,
+            loop: true
+        });
+    });
+</script>
+
 
 </html>

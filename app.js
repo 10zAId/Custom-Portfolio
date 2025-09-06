@@ -15,7 +15,7 @@ loader.load(
 
         // flip + scale
         butterfly.rotation.y = Math.PI;
-        butterfly.scale.set(0.5, 0.5, 0.5);
+        butterfly.scale.set(0.3, 0.3, 0.3);
 
         scene.add(butterfly);
 
@@ -38,8 +38,8 @@ scene.add(topLight);
 
 // section keyframes
 const arrPositionModel = [
-    { id: 'banner', position: { x: 1.1, y: -0.48, z: 0 }, rotation: { x: 0, y: -1.5, z: 0 } },
-    { id: 'About', position: { x: -1, y: 0, z: -5 }, rotation: { x: 0, y: Math.PI - 1, z: 0 } },
+    { id: 'Home', position: { x: 1.2, y: -0.7, z: 0 }, rotation: { x: 0, y: 4.9, z: 0 } },
+    { id: 'About', position: { x: -0.9, y: 0, z: -5 }, rotation: { x: 0, y: Math.PI - 1, z: 0 } },
     { id: 'Skills', position: { x: 2, y: 0, z: -5 }, rotation: { x: 0, y: Math.PI + 1, z: 0 } },
     { id: 'Contact', position: { x: 10, y: 5, z: -10 }, rotation: { x: 0, y: Math.PI, z: 0 } },
 ];
