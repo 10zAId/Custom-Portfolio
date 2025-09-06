@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 html {
-    scroll-snap-type: y mandatory;
+    /* scroll-snap-type: y mandatory; */
     scroll-behavior: smooth;
 }
 
@@ -15,9 +15,7 @@ body {
     background-color: #000;
     color: #e4e4e4;
     font-size: 14px;
-    background-image:
-        url(img/bg.png),
-        repeating-linear-gradient(to right, transparent 0 500px, #4b728133 500px 501px);
+    background-image: url(img/bg.png);
     background-size: 100%;
 }
 
@@ -40,24 +38,25 @@ body {
 }
 
 .para h2 {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
+    color: #e4e4e4;
+    font-weight: 600;
 }
 
 /* Container that holds typed text */
 .typed-wrapper {
     display: inline-block;
-    min-width: 21rem;
+    min-width: 19rem;
     /* reserve space for longest phrase */
     text-align: left;
 }
 
 /* Typed.js text */
 #typed-text {
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: 1.8rem;
+    font-weight: 600;
     color: #e4e4e4;
     font-family: 'Poppins', sans-serif;
-    line-height: 1.2;
 }
 
 /* Cursor styling */
@@ -89,12 +88,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
 }
 
 .logo {
     font-family: "Caprasimo";
     font-size: 4em;
+    color: #e4e4e4;
 }
 
 .content-fit {
@@ -106,14 +106,13 @@ body {
 }
 
 header {
-    padding-block: 1em;
+    padding-block: 0.5em;
     position: fixed;
     top: 0;
     width: 100%;
     backdrop-filter: blur(20px);
-    z-index: 100;
+    z-index: 200;
     background-color: #1B1B1B11;
-    background-image: repeating-linear-gradient(to right, transparent 0 500px, rgba(238, 238, 238, 0.067) 500px 501px);
 }
 
 header .content-fit {
@@ -130,7 +129,7 @@ header .content-fit nav ul {
 }
 
 #Home .title {
-    background: linear-gradient(90deg, #0d2525, #00ffff);
+    background: linear-gradient(90deg, #003636, #00ffff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -141,7 +140,9 @@ header .content-fit nav ul {
     font-weight: bold;
     position: relative;
     text-align: center;
+    text-shadow: 6px 6px 8px rgba(0, 3, 3, 0.3);
 }
+
 
 .section .decorate {
     position: absolute;
@@ -155,6 +156,7 @@ header .content-fit nav ul {
 
 .des p {
     font-size: 1.2em;
+    color: #e4e4e4;
 }
 
 #About .content-fit {
@@ -174,6 +176,7 @@ header .content-fit nav ul {
     font-family: "devil breeze";
     font-size: 5em;
     font-weight: bold;
+    color: #e4e4e4;
 }
 
 #Skills .content-fit {
@@ -183,6 +186,7 @@ header .content-fit nav ul {
 #Skills .title {
     font-size: 7em;
     font-weight: 500;
+    color: #e4e4e4;
 }
 
 .entry {
@@ -205,13 +209,13 @@ header .content-fit nav ul {
 }
 
 #Skills li {
-    font-family: 'Antonio';
+    font-family: 'Poppins', sans-serif;
     padding: 3vh;
     width: 12em;
     background-color: rgba(13, 13, 13, 0.9);
     border-radius: 10px;
     text-align: center;
-    font-size: 1.4vw;
+    font-size: 1.3vw;
 }
 
 #Skills img {
@@ -252,13 +256,13 @@ header .content-fit nav ul {
 }
 
 .contact-form h2 {
+    background: linear-gradient(to right, #1d7272, #00ffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
     font-size: 2em;
-    color: #1d7272;
     margin-bottom: 0.5em;
-}
-
-.contact-form h2 span {
-    color: #41fcfc;
 }
 
 .contact-form p {
@@ -296,7 +300,7 @@ header .content-fit nav ul {
     padding: 0.8em;
     border: none;
     border-radius: 20px;
-    background: linear-gradient(to right, #1d7272, #41fcfc);
+    background: linear-gradient(to right, #1d7272, #00ffff);
     color: #e4e4e4;
     font-weight: bold;
     cursor: pointer;
@@ -345,7 +349,7 @@ header .content-fit nav ul {
 }
 
 .footer-content .social-icons img {
-    filter: invert(1);
+    filter: invert();
     width: 32px;
     /* bigger icons */
     height: 32px;

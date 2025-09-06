@@ -15,7 +15,7 @@ loader.load(
 
         // flip + scale
         butterfly.rotation.y = Math.PI;
-        butterfly.scale.set(0.3, 0.3, 0.3);
+        butterfly.scale.set(0.32, 0.32, 0.32);
 
         scene.add(butterfly);
 
@@ -38,7 +38,7 @@ scene.add(topLight);
 
 // section keyframes
 const arrPositionModel = [
-    { id: 'Home', position: { x: 1.2, y: -0.7, z: 0 }, rotation: { x: 0, y: 4.9, z: 0 } },
+    { id: 'Home', position: { x: 1.2, y: -0.6, z: 0 }, rotation: { x: 0, y: 4.9, z: 0 } },
     { id: 'About', position: { x: -0.9, y: 0, z: -5 }, rotation: { x: 0, y: Math.PI - 1, z: 0 } },
     { id: 'Skills', position: { x: 2, y: 0, z: -5 }, rotation: { x: 0, y: Math.PI + 1, z: 0 } },
     { id: 'Contact', position: { x: 10, y: 5, z: -10 }, rotation: { x: 0, y: Math.PI, z: 0 } },
@@ -47,6 +47,10 @@ const arrPositionModel = [
 
 function lerp(a, b, t) {
     return a + (b - a) * t;
+}
+
+function easeInOut(t) {
+    return t * t * (3 - 2 * t);
 }
 
 function updateModelOnScroll() {
@@ -60,25 +64,27 @@ function updateModelOnScroll() {
     const i = Math.floor(rawIndex);
     const t = rawIndex - i;
 
+    const easedT = easeInOut(t); // 👈 smoother interpolation
+
     const start = arrPositionModel[i];
     const end = arrPositionModel[i + 1] || start;
 
     // interpolate position
-    butterfly.position.x = lerp(start.position.x, end.position.x, t);
-    butterfly.position.y = lerp(start.position.y, end.position.y, t);
-    butterfly.position.z = lerp(start.position.z, end.position.z, t);
+    butterfly.position.x = lerp(start.position.x, end.position.x, easedT);
+    butterfly.position.y = lerp(start.position.y, end.position.y, easedT);
+    butterfly.position.z = lerp(start.position.z, end.position.z, easedT);
 
     // interpolate rotation
-    butterfly.rotation.x = lerp(start.rotation.x, end.rotation.x, t);
-    butterfly.rotation.y = lerp(start.rotation.y, end.rotation.y, t);
-    butterfly.rotation.z = lerp(start.rotation.z, end.rotation.z, t);
+    butterfly.rotation.x = lerp(start.rotation.x, end.rotation.x, easedT);
+    butterfly.rotation.y = lerp(start.rotation.y, end.rotation.y, easedT);
+    butterfly.rotation.z = lerp(start.rotation.z, end.rotation.z, easedT);
 }
 
 
 // render loop
 function render() {
     requestAnimationFrame(render);
-    if (mixer) mixer.update(0.02);
+    if (mixer) mixer.update(0.012);
     updateModelOnScroll();
     renderer.render(scene, camera);
 }
