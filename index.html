@@ -94,8 +94,11 @@
                     <p>I solve problems with simple solutions. I would love to help you out!</p>
                     <form id="contact-form">
                         <div class="form-row">
-                            <input type="text" name="firstName" placeholder="First name" required>
-                            <input type="text" name="lastName" placeholder="Last name" required>
+                            <input type="text" name="firstName" placeholder="First name" required pattern="[A-Za-z]+"
+                                title="First name should only contain letters">
+
+                            <input type="text" name="lastName" placeholder="Last name" required pattern="[A-Za-z]+"
+                                title="Last name should only contain letters">
                         </div>
                         <div class="form-row">
                             <input type="email" name="email" placeholder="Email address" required
@@ -110,7 +113,7 @@
                             <option value="UI/UX Design">UI/UX Design</option>
                             <option value="Data Science">Data Science</option>
                         </select>
-                        <textarea name="message" placeholder="Message" rows="5" required></textarea>
+                        <textarea name="message" placeholder="Message" rows="5"></textarea>
                         <button type="submit" id="sendBtn">Send Message</button>
                     </form>
                 </div>
