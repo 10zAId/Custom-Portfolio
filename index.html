@@ -37,7 +37,6 @@
         <img src="img/flower.png" class="decorate" alt="" style="width: 40vw; bottom: 0; right: 0;">
     </div>
 
-
     <!-- About section -->
     <div class="section" id="About">
         <div class="content-fit">
@@ -82,6 +81,7 @@
         </div>
         <img src="img/leaf.png" class="decorate" alt="" style="width: 63vw; bottom: 0; right: 0; z-index: 101;">
     </div>
+
     <!-- Contact section -->
     <div class="section" id="Contact">
         <div class="content-fit">
@@ -92,23 +92,23 @@
                 <div class="contact-form">
                     <h2>Let’s work together!</h2>
                     <p>I solve problems with simple solutions. I would love to help you out!</p>
-                    <form>
+                    <form id="contact-form">
                         <div class="form-row">
-                            <input type="text" placeholder="First name" required>
-                            <input type="text" placeholder="Last name" required>
+                            <input type="text" name="firstName" placeholder="First name" required>
+                            <input type="text" name="lastName" placeholder="Last name" required>
                         </div>
                         <div class="form-row">
-                            <input type="email" placeholder="Email address" required>
-                            <input type="tel" placeholder="Phone number" required>
+                            <input type="email" name="email" placeholder="Email address" required>
+                            <input type="tel" name="phone" placeholder="Phone number" required>
                         </div>
-                        <select required>
+                        <select name="service" required>
                             <option value="">Choose Service</option>
-                            <option value="web">Web Development</option>
-                            <option value="design">UI/UX Design</option>
-                            <option value="data">Data Science</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                            <option value="Data Science">Data Science</option>
                         </select>
-                        <textarea placeholder="Message" rows="5" required></textarea>
-                        <button type="submit">Send Message</button>
+                        <textarea name="message" placeholder="Message" rows="5" required></textarea>
+                        <button type="submit" id="sendBtn">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -119,33 +119,62 @@
                 <div class="social-icons">
                     <a href="https://www.linkedin.com/in/zaid-ahmed-8159a5372/" target="_blank"
                         rel="noopener noreferrer"><img src="img/linkedin.png" alt="linkedin"></a>
-                    <a href="https://www.github.com/10zAId" target="_blank" rel="noopener noreferrer"><img
+                    <a href="https://www.github.com/zaidcodez" target="_blank" rel="noopener noreferrer"><img
                             src="img/github.png" alt="github"></a>
                 </div>
             </div>
         </footer>
     </div>
 
-</body>
-
-<div id="container3D"></div>
-<script type="module" src="app.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        new Typed("#typed-text", {
-            strings: [
-                "a Web Developer",
-                "a Python Enthusiast",
-                "an AI Enthusiast",
-                "a Problem Solver"
-            ],
-            typeSpeed: 60,
-            backSpeed: 40,
-            backDelay: 1500,
-            loop: true
+    <div id="container3D"></div>
+    <script type="module" src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            new Typed("#typed-text", {
+                strings: [
+                    "a Web Developer",
+                    "a Python Enthusiast",
+                    "an AI Enthusiast",
+                    "a Problem Solver"
+                ],
+                typeSpeed: 60,
+                backSpeed: 40,
+                backDelay: 1500,
+                loop: true
+            });
         });
-    });
-</script>
+    </script>
+
+    <!-- EmailJS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("JxVhSfjTtYldVhm4j"); // your public key
+        })();
+
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const sendBtn = document.getElementById("sendBtn");
+            sendBtn.disabled = true;
+            sendBtn.textContent = "Sending...";
+
+            emailjs.sendForm("service_zcvr32h", "template_p6cokqh", this)
+                .then(() => {
+                    alert("✅ Message sent successfully!");
+                    this.reset();
+                }, (err) => {
+                    console.error("FAILED...", err);
+                    alert("❌ Failed to send message. Please try again.");
+                })
+                .finally(() => {
+                    sendBtn.disabled = false;
+                    sendBtn.textContent = "Send Message";
+                });
+        });
+    </script>
+
+</body>
 
 </html>
