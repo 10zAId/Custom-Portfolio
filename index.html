@@ -98,8 +98,10 @@
                             <input type="text" name="lastName" placeholder="Last name" required>
                         </div>
                         <div class="form-row">
-                            <input type="email" name="email" placeholder="Email address" required>
-                            <input type="tel" name="phone" placeholder="Phone number" required>
+                            <input type="email" name="email" placeholder="Email address" required
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter a valid email address">
+                            <input type="tel" name="phone" placeholder="Phone number" required pattern="[0-9]{7,15}"
+                                title="Phone number should contain 7 to 15 digits">
                         </div>
                         <select name="service" required>
                             <option value="">Choose Service</option>
